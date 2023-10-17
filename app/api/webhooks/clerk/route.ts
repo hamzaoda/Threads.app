@@ -17,7 +17,10 @@ import {
     removeUserFromCommunity,
     updateCommunityInfo,
 } from "@/lib/actions/community.actions";
-
+export const runtime = 'edge'; // 'nodejs' is the default
+export const preferredRegion = 'iad1'; // only execute this function on iad1
+export const dynamic = 'force-dynamic'; // no caching
+ 
 // Resource: https://clerk.com/docs/integration/webhooks#supported-events
 // Above document lists the supported events
 type EventType =
