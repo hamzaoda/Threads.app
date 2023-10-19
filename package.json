@@ -40,7 +40,4 @@
     "tailwindcss": "^3.3.3",
     "typescript": "latest"
   },
-  "engines": {
-    "node": ">=16.0.0"
-  },
 }
