@@ -26,22 +26,12 @@ export async function createCommunity(
             throw new Error("User not found"); // Handle the case if the user with the id is not found
         }
 
-        // const newCommunity = new Community({
-        //     id,
-        //     name,
-        //     username,
-        //     image,
-        //     bio,
-        //     createdBy: user._id, // Use the mongoose ID of the user
-        // });
-
-        //this is test remove after testing
         const newCommunity = new Community({
-            id:"123",
-            name: "koko",
-            username: "koko",
-            image: "koko",
-            bio: "koko",
+            id,
+            name,
+            username,
+            image,
+            bio,
             createdBy: user._id, // Use the mongoose ID of the user
         });
 
