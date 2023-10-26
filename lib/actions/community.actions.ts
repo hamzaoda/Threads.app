@@ -26,17 +26,27 @@ export async function createCommunity(
             throw new Error("User not found"); // Handle the case if the user with the id is not found
         }
 
+        // const newCommunity = new Community({
+        //     id,
+        //     name,
+        //     username,
+        //     image,
+        //     bio,
+        //     createdBy: user._id, // Use the mongoose ID of the user
+        // });
+
+        //this is test remove after testing
         const newCommunity = new Community({
-            id,
-            name,
-            username,
-            image,
-            bio,
+            id:"123",
+            name: "koko",
+            username: "koko",
+            image: "koko",
+            bio: "koko",
             createdBy: user._id, // Use the mongoose ID of the user
         });
 
         const createdCommunity = await newCommunity.save();
-
+        console.log('community Created', id);
         // Update User model
         user.communities.push(createdCommunity._id);
         await user.save();
