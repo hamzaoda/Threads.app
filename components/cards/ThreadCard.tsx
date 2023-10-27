@@ -38,6 +38,7 @@ function ThreadCard({
     comments,
     isComment,
 }: Props) {
+    console.log('this is community', community);
     return (
         <article className={`flex w-full flex-col rounded-xl bg-dark-2 p-7 ${isComment ? 'px-0 xs:px-7 ':'bg-dark-2 p-7'}`}>
             <div className="flex items-start justify-between">
@@ -67,6 +68,7 @@ function ThreadCard({
                                 {/* share */}
                                 <Image src="/assets/share.svg" alt="share" width={25} height={25} className="cursor-pointer object-contain"></Image>
                             </div>
+                            {community as any}
                             {isComment && comments.length> 0 && (
                                 <Link href={`/thread/${id}`}>
                                     <p className="mt-1 text-subtle-medium text-gray-1">{comments.length} replies</p>
@@ -78,14 +80,14 @@ function ThreadCard({
                 {/* delete threads */}
                 {/* show comment logo */}
             </div>
-            {/* {console.log('this is community', community) as any} */}
             {!isComment && community && (
                     <Link href={`/communities/${community.id}`} className="mt-5 flex items-center">
                         <p className="text-subtle-medium text-gray-1">
                             {formatDateString(createdAt)}
-                            - {community.name} Community
+                            {" "} - {community.name} Community 
                         </p>
-                        <Image src={community.image}
+                        <Image 
+                        src={community.image}
                         alt={community.name}
                         width={24}
                         height={24}
